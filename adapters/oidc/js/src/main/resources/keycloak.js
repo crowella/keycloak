@@ -1187,8 +1187,8 @@
                 var params = paramString.split('&');
                 for (var i = 0; i < params.length; i++) {
                     var p = params[i].split('=');
-                    var paramName = decodeURIComponent(p[0]);
-                    var paramValue = decodeURIComponent(p[1]);
+                    var paramName = decodeURIComponent(p.shift());
+                    var paramValue = decodeURIComponent(p.join('='));
                     result[paramName] = paramValue;
                 }
                 return result;
